@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+.pytest_cache/
+.mypy_cache/
+*.bin
+
+# Environment
+.env
+venv/
+env/
+.venv/
+
+# Data (large files — store separately or in git-lfs)
+data/faiss.index
+data/faiss_meta.json
+
+# DO commit catalog.json — it's your ground truth
+# data/catalog.json  <-- intentionally NOT gitignored
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
