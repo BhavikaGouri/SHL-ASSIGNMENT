@@ -1,4 +1,3 @@
-from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from pydantic import BaseModel
 from app.agent import detect_intent, needs_clarification
@@ -8,26 +7,6 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    logger.info("=" * 60)
-    logger.info("SHL Assessment Recommendation Agent")
-    logger.info("=" * 60)
-    logger.info("A conversational AI agent that recommends SHL Individual")
-    logger.info("Test Solutions based on hiring requirements.")
-    logger.info("")
-    logger.info("Available Endpoints:")
-    logger.info("GET  /health   -> Health check")
-    logger.info("POST /chat     -> Chat with the recommendation agent")
-    logger.info("")
-    logger.info("Swagger UI: http://127.0.0.1:8000/docs")
-    logger.info("=" * 60)
-    yield
-
-
-app = FastAPI(lifespan=lifespan)
 
 
 class Message(BaseModel):
@@ -48,6 +27,7 @@ def build_search_query(messages):
 
     return " ".join(user_messages)
 
+app = FastAPI()
 
 @app.get("/")
 def root():

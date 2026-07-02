@@ -26,8 +26,3 @@ data/faiss_meta.json
 # OS
 .DS_Store
 Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-*.swp

@@ -28,24 +28,3 @@ def retrieve(query: str, k: int = 5):
             break
 
     return recommendations
-
-
-def retrieve_by_name(name: str):
-    results = vector_db.similarity_search(name, k=1)
-
-    if results:
-        return results[0]
-
-    return None
-
-if __name__ == "__main__":
-
-    query = "Java developer with leadership skills"
-
-    results = retrieve(query)
-
-    for i, r in enumerate(results, 1):
-        print("=" * 60)
-        print(f"{i}. {r['title']}")
-        print(r["url"])
-        print(r["content"])
