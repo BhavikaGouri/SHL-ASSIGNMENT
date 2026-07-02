@@ -4,7 +4,7 @@ import google.generativeai as genai
 
 load_dotenv()
 
-genai.configure(api_key="AQ.Ab8RN6JdfpHGEsIql_t-QNYZReyjYj137vCZPYuuiImOkSixWA")
+genai.configure(api_key=os.getenv("GENAI_API_KEY"))
 
 model = genai.GenerativeModel("gemini-2.5-flash")
 def generate_reply(query, retrieved_docs):
