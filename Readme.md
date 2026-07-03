@@ -32,40 +32,6 @@ SHL-ASSIGNMENT/
 └── README.md
 ```
 
-## Installation
-
-Create a virtual environment and install dependencies.
-
-```bash
-pip install -r requirements.txt
-```
-
-Create a `.env` file and add your Gemini API key.
-
-```text
-GEMINI_API_KEY=your_api_key
-```
-
-## Run
-
-Start the FastAPI server.
-
-```bash
-uvicorn app.main:app --reload
-```
-
-API will be available at:
-
-```
-http://127.0.0.1:8000
-```
-
-Swagger documentation:
-
-```
-http://127.0.0.1:8000/docs
-```
-
 ## API Endpoints
 
 ### Health Check
@@ -108,12 +74,3 @@ Example request
 3. Retrieve relevant assessments using semantic search.
 4. Generate responses using Gemini.
 5. Return assessment recommendations in the required format.
-
-## Tech Stack
-
-- Python
-- FastAPI
-- Sentence Transformers
-- FAISS
-- Gemini
-- BeautifulSoup
